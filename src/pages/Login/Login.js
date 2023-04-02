@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
+
+    
     return (
         <section class="py-6 bg-primary h-screen grid place-items-center">
             <div class="mx-auto max-w-md px-5 lg:px-0">
@@ -27,9 +30,9 @@ const Login = () => {
 
                     <div class="flex items-center justify-end">
                         <div class="text-sm">
-                            <a href="./StudentReistration.html" class="font-medium text-violet-600 hover:text-violet-500">
+                            <Link to='/register' class="font-medium text-violet-600 hover:text-violet-500">
                                 Create New Account
-                            </a>
+                            </Link>
                         </div>
                     </div>
 

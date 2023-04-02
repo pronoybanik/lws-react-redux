@@ -8,6 +8,9 @@ import Register from "../pages/register/Register";
 import AdminLayOut from "../LayOut/AdminLayOut";
 import AdminDashBoard from "../pages/AdminDashBoard.js/AdminDashBoard";
 import AdminAddVideo from "../components/AdminAddVideo/AdminAddVideo";
+import Assignment from "../components/Assignment/Assignment";
+import Quizzes from "../components/Quizzes/Quizzes";
+import AssignmentMark from "../components/AssignmentMark/AssignmentMark";
 
 
 const allRouter = createBrowserRouter([
@@ -39,19 +42,36 @@ const allRouter = createBrowserRouter([
         ]
     },
     // {
-    //     path: '/dashBoard',
-    //     element: <AdminLayOut></AdminLayOut>,
-    //     children: [
-    //         {
-    //             path: '/dashBoard',
-    //             element: <AdminDashBoard></AdminDashBoard>
-    //         },
-    //         {
-    //             path: '/dashBoard/videos',
-    //             element: <AdminAddVideo></AdminAddVideo>
-    //         }
-    //     ]
-    // }
+    //     path: "/adminLogin",
+    //     element: <Register></Register>
+    // },
+    {
+        path: '/admin',
+        element: <AdminLayOut></AdminLayOut>,
+        children: [
+            {
+                path: '/admin',
+                element: <AdminDashBoard></AdminDashBoard>
+            },
+            {
+                path: '/admin/Videos',
+                element: <AdminAddVideo></AdminAddVideo>
+            },
+            {
+                path: '/admin/assignment',
+                element: <Assignment></Assignment>
+            },
+            {
+                path: '/admin/quizzes',
+                element: <Quizzes></Quizzes>
+            },
+            {
+                path: '/admin/assignmentMark',
+                element: <AssignmentMark></AssignmentMark>
+            },
+
+        ]
+    }
 ]);
 
 export default allRouter;

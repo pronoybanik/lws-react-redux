@@ -48,6 +48,18 @@
       "role": "student",
       "name": "Arif",
       "id": 7
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$Pqo2K3mIyGrInAsdpPWAMeLQeZqLn0F5lm5OivdOIZikQmfROO1mq",
+      "name": "pronoy banik",
+      "id": 8
+    },
+    {
+      "email": "pronoy12@gmail.com",
+      "password": "$2a$10$LYzc0Y.zEIoXkePjwZelUOtwn78V1a47JrFV0zH2yoFV3ik9mW22y",
+      "name": "pronoy banik",
+      "id": 9
     }
   ],
   "videos": [
