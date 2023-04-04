@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useLogInMutation } from '../../features/Auth/AuthApi';
+import image from '../../image/learningportal.svg';
 import Error from '../../components/ui/Error';
-import image from '../../image/learningportal.svg'
+import { Link, useNavigate } from 'react-router-dom';
+import { useAdminLogInMutation } from '../../features/Auth/AuthApi';
 
-const Login = () => {
+
+const AdminLogin = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
-    const [logIn, { data, error: responseError }] = useLogInMutation();
+    const [AdminLogIn, { data, error: responseError }] = useAdminLogInMutation();
 
     useEffect(() => {
         if (responseError?.data) {
             setError(responseError.data);
         }
         if (data?.accessToken && data?.user) {
-            navigate("/coursePlayer");
+            navigate("/admin");
         }
     }, [data, responseError, navigate]);
 
@@ -27,7 +28,7 @@ const Login = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        logIn({
+        AdminLogIn({
             email,
             password
         });
@@ -40,7 +41,7 @@ const Login = () => {
                 <div>
                     <img class="h-12 mx-auto" src={image} alt='' />
                     <h2 class="mt-6 text-center text-3xl font-extrabold text-slate-100">
-                        Sign in to Student Account
+                        Sign in to Admin Account
                     </h2>
                 </div>
                 <form onSubmit={handleSubmit} class="mt-8 space-y-6" action="#" method="POST">
@@ -84,6 +85,8 @@ const Login = () => {
             </div>
         </section>
     );
+
+
 };
 
-export default Login;
+export default AdminLogin;

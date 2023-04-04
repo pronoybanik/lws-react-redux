@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRegisterMutation } from '../../features/Auth/AuthApi';
 import Error from '../../components/ui/Error';
+import { useNavigate } from 'react-router-dom';
+import image from '../../image/learningportal.svg'
 
 const Register = () => {
 
@@ -9,15 +11,24 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState();
-    const [register, { data, isError }] = useRegisterMutation();
+    const navigate = useNavigate();
+    const [register, { data, error: responseError }] = useRegisterMutation();
 
+    useEffect(() => {
+        if (responseError?.data) {
+            setError(responseError.data);
+        }
+        if (data?.accessToken && data?.user) {
+            navigate("/coursePlayer");
+        }
+    }, [data, responseError, navigate]);
 
     const reset = () => {
         setName("")
         setEmail("")
         setPassword("")
         setConfirmPassword("")
-    }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,15 +40,15 @@ const Register = () => {
                 email,
                 password,
             })
+            reset();
         }
-        reset();
-    }
+    };
 
     return (
         <section class="py-6 bg-primary h-screen grid place-items-center">
             <div class="mx-auto max-w-md px-5 lg:px-0">
                 <div>
-                    <img class="h-12 mx-auto" src="../assets/image/learningportal.svg" />
+                    <img class="h-12 mx-auto" src={image} alt='' />
                     <h2 class="mt-6 text-center text-3xl font-extrabold text-slate-100">
                         Create Your New Account
                     </h2>

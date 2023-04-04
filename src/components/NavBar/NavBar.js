@@ -1,14 +1,28 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { userLoggedOut } from '../../features/Auth/AuthSlice';
+import { Link } from 'react-router-dom';
+import image from '../../image/learningportal.svg'
 
 const NavBar = () => {
+
+    const dispatch = useDispatch();
+    const { user } = useSelector(state => state.auth)
+
+    const handleLogOut = () => {
+        dispatch(userLoggedOut())
+        localStorage.clear()
+    }
     return (
         <nav class="shadow-md">
             <div class="max-w-7xl px-5 lg:px-0 mx-auto flex justify-between py-3">
-                <img class="h-10" src="../assets/image/learningportal.svg" />
+                <Link to="/coursePlayer">
+                    <img class="h-10" src={image} alt='' />
+                </Link>
                 <div class="flex items-center gap-3">
-                    <a href="./Leaderboard.html">Leaderboard</a>
-                    <h2 class="font-bold">Saad Hasan</h2>
-                    <button
+                    <Link to="/leaderBoard">Leaderboard</Link>
+                    <h2 class="font-bold">{user?.name} </h2>
+                    <button onClick={handleLogOut}
                         class="flex gap-2 border border-cyan items-center px-4 py-1 rounded-full text-sm transition-all hover:bg-cyan ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
