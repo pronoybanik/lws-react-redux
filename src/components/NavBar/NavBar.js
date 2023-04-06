@@ -16,7 +16,7 @@ const NavBar = () => {
     return (
         <nav class="shadow-md">
             <div class="max-w-7xl px-5 lg:px-0 mx-auto flex justify-between py-3">
-                <Link to="/coursePlayer">
+                <Link to={`/coursePlayer/${1}`}>
                     <img class="h-10" src={image} alt='' />
                 </Link>
                 <div class="flex items-center gap-3">

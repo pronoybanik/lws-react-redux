@@ -17,7 +17,7 @@ const Login = () => {
             setError(responseError.data);
         }
         if (data?.accessToken && data?.user) {
-            navigate("/coursePlayer");
+            navigate("/coursePlayer/1");
         }
     }, [data, responseError, navigate]);
 

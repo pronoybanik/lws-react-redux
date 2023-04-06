@@ -3,11 +3,11 @@ import { useGetVideosQuery } from '../../features/Videos/VideosApi';
 import Loading from '../ui/Loading';
 import Error from '../ui/Error';
 import VideoItem from './VideoItem';
+import { useParams } from 'react-router-dom';
 
 const Video = () => {
-    const { data: videos, isLoading, isError, error } = useGetVideosQuery();
-    console.log(videos);
-
+    const { id } = useParams();
+    const { data: videos, isLoading, isError, error } = useGetVideosQuery(id);
 
 
     let content = null;

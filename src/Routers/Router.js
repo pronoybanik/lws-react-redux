@@ -16,6 +16,11 @@ import PublicRouteStudent from "./PublicRouteStudent";
 import AdminLogin from "../pages/AdminLogin/AdminLogin";
 import PrivateRoteAdmin from "./PrivateRoteAdmin";
 import PublicRouteAdmin from "./PublicRouteAdmin";
+import AddVideo from "../components/AddVideo/AddVideo";
+import EditVideo from "../components/EditVideo/EditVideo";
+import CoursePlayerVideo from "../components/CoursePlayerVideo/CoursePlayerVideo";
+import AddAssignment from "../components/Assignment/AddAssignment";
+import EditAssignment from "../components/Assignment/EditAssignment";
 
 
 const allRouter = createBrowserRouter([
@@ -32,8 +37,8 @@ const allRouter = createBrowserRouter([
         element: <Main></Main>,
         children: [
             {
-                path: '/coursePlayer',
-                element: <PrivateRouteStudent><CoursePlayer></CoursePlayer></PrivateRouteStudent>
+                path: '/coursePlayer/:id',
+                element: <PrivateRouteStudent><CoursePlayerVideo></CoursePlayerVideo></PrivateRouteStudent>
             },
             {
                 path: '/leaderBoard',
@@ -46,6 +51,7 @@ const allRouter = createBrowserRouter([
 
         ]
     },
+    // Admin role section..
     {
         path: "/admin/login",
         element: <PublicRouteAdmin><AdminLogin></AdminLogin></PublicRouteAdmin>
@@ -63,8 +69,24 @@ const allRouter = createBrowserRouter([
                 element: <PrivateRoteAdmin><AdminAddVideo></AdminAddVideo></PrivateRoteAdmin>
             },
             {
+                path: '/admin/addVideo',
+                element: <PrivateRoteAdmin><AddVideo></AddVideo></PrivateRoteAdmin>
+            },
+            {
+                path: '/admin/editVideo/:id',
+                element: <PrivateRoteAdmin><EditVideo></EditVideo></PrivateRoteAdmin>
+            },
+            {
                 path: '/admin/assignment',
                 element: <PrivateRoteAdmin><Assignment></Assignment></PrivateRoteAdmin>
+            },
+            {
+                path: '/admin/assignment/:id',
+                element: <PrivateRoteAdmin><EditAssignment></EditAssignment></PrivateRoteAdmin>
+            },
+            {
+                path: '/admin/addAssignment',
+                element: <PrivateRoteAdmin><AddAssignment></AddAssignment></PrivateRoteAdmin>
             },
             {
                 path: '/admin/quizzes',
@@ -74,7 +96,6 @@ const allRouter = createBrowserRouter([
                 path: '/admin/assignmentMark',
                 element: <PrivateRoteAdmin><AssignmentMark></AssignmentMark></PrivateRoteAdmin>
             },
-
         ]
     }
 ]);

@@ -4,19 +4,21 @@ import { userLoggedOut } from '../../features/Auth/AuthSlice';
 import image from '../../image/learningportal.svg'
 import { Link } from 'react-router-dom';
 
+
 const AdminNavBar = () => {
     const dispatch = useDispatch();
     const { user } = useSelector(state => state.auth)
 
     const handleLogOut = () => {
-        dispatch(userLoggedOut())
-        localStorage.clear()
+        dispatch(userLoggedOut());
+        localStorage.clear();
     }
+
     return (
         <nav class="shadow-md">
             <div class="max-w-7xl px-5 lg:px-0 mx-auto flex justify-between py-3">
                 <Link to='/admin'>
-                <img class="h-10" src={image} alt='' />
+                    <img class="h-10" src={image} alt='' />
                 </Link>
                 <div class="flex items-center gap-3">
                     <h2 class="font-bold">{user?.name}</h2>

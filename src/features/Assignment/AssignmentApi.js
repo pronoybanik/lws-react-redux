@@ -1,31 +1,25 @@
 import { apiSlice } from "../Api/ApiSlice";
 
-const videoApi = apiSlice.injectEndpoints({
+const assignmentApi = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
-        getVideos: builder.query({
-            query: (id) => `/videos?id_like=${id}&_limit=1`
+        getAssignment: builder.query({
+            query: () => '/assignments'
         }),
-        // getVideo: builder.query({
-        //     query: () => `/videos?_limit=1`
-        // }),
-        getAllVideos: builder.query({
-            query: () => '/videos'
+        getAssignmentId: builder.query({
+            query: (id) => `/assignments/${id}`
         }),
-        getVideosId: builder.query({
-            query: (id) => `/videos/${id}`
-        }),
-        addVideo: builder.mutation({
+        addAssignment: builder.mutation({
             query: (data) => ({
-                url: '/videos',
+                url: '/assignments',
                 method: 'POST',
-                body: data,
+                body: data
             }),
             async onQueryStarted(args, { queryFulfilled, dispatch }) {
                 try {
                     const { data } = await queryFulfilled;
 
                     dispatch(
-                        videoApi.util.updateQueryData('getAllVideos', undefined, (draft) => {
+                        assignmentApi.util.updateQueryData('getAssignment', undefined, (draft) => {
                             draft?.push(data)
                         })
                     )
@@ -34,14 +28,14 @@ const videoApi = apiSlice.injectEndpoints({
                 }
             }
         }),
-        deleteVideo: builder.mutation({
+        deleteAssignment: builder.mutation({
             query: (id) => ({
-                url: `/videos/${id}`,
-                method: 'DELETE'
+                url: `/assignments/${id}`,
+                method: 'DELETE',
             }),
             async onQueryStarted(args, { queryFulfilled, dispatch }) {
                 const deletedPatch = dispatch(
-                    videoApi.util.updateQueryData("getAllVideos", undefined, (draft) => {
+                    assignmentApi.util.updateQueryData("getAssignment", undefined, (draft) => {
                         const position = draft.findIndex((task) => task?.id === args);
                         draft.splice(position, 1);
                     })
@@ -56,9 +50,9 @@ const videoApi = apiSlice.injectEndpoints({
             }
 
         }),
-        editVideo: builder.mutation({
+        editAssignment: builder.mutation({
             query: ({ id, data }) => ({
-                url: `/videos/${id}`,
+                url: `/assignments/${id}`,
                 method: 'PATCH',
                 body: data
             }),
@@ -67,7 +61,7 @@ const videoApi = apiSlice.injectEndpoints({
 
                     const { data: EditData } = await queryFulfilled;
                     dispatch(
-                        videoApi.util.updateQueryData("getAllVideos", undefined, (draft) => {
+                        assignmentApi.util.updateQueryData("getAssignment", undefined, (draft) => {
                             let index = draft?.findIndex(task => task.id === EditData.id)
                             draft[index] = EditData;
                         })
@@ -81,11 +75,9 @@ const videoApi = apiSlice.injectEndpoints({
 });
 
 export const {
-    useGetAllVideosQuery,
-    useGetVideosQuery,
-    useAddVideoMutation,
-    useDeleteVideoMutation,
-    useGetVideosIdQuery,
-    useEditVideoMutation,
-    // useGetVideoQuery
-} = videoApi;
+    useGetAssignmentQuery,
+    useAddAssignmentMutation,
+    useDeleteAssignmentMutation,
+    useGetAssignmentIdQuery,
+    useEditAssignmentMutation,
+} = assignmentApi;

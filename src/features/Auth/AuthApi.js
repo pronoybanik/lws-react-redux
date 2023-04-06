@@ -40,17 +40,19 @@ export const authApi = apiSlice.injectEndpoints({
                 try {
                     const result = await queryFulfilled;
 
-                    localStorage.setItem("auth", JSON.stringify({
-                        accessToken: result.data.accessToken,
-                        user: result.data.user
-                    }))
-
-                    dispatch(
-                        userLoggedIn({
+                    if (result.data.user.role === "student") {
+                        localStorage.setItem("auth", JSON.stringify({
                             accessToken: result.data.accessToken,
-                            user: result.data.user,
-                        })
-                    )
+                            user: result.data.user
+                        }))
+
+                        dispatch(
+                            userLoggedIn({
+                                accessToken: result.data.accessToken,
+                                user: result.data.user,
+                            })
+                        )
+                    }
                 } catch (error) {
                     console.log(error);
                 }

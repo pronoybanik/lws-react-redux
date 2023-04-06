@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const VideoListItem = ({ videoListDetails }) => {
-    console.log(videoListDetails);
     const { id, title, url, duration, views } = videoListDetails || {};
     return (
         <div class="w-full flex flex-row gap-2 cursor-pointer hover:bg-slate-900 p-2">
@@ -16,14 +15,14 @@ const VideoListItem = ({ videoListDetails }) => {
             </svg>
             {/* <!-- Description --> */}
             <div clas="flex flex-col w-full">
-                <Link to={`/videos/${id}`}>
+                <Link to={`/coursePlayer/${id}`}>
                     <p class="text-slate-50 text-sm font-medium">Introduction to Couse</p>
+                    <div>
+                        <span class="text-gray-400 text-xs mt-1">34.5 Mins</span>
+                        <span class="text-gray-400 text-xs mt-1"> | </span>
+                        <span class="text-gray-400 text-xs mt-1">{views} views</span>
+                    </div>
                 </Link>
-                <div>
-                    <span class="text-gray-400 text-xs mt-1">34.5 Mins</span>
-                    <span class="text-gray-400 text-xs mt-1"> | </span>
-                    <span class="text-gray-400 text-xs mt-1">{views} views</span>
-                </div>
             </div>
         </div>
     );

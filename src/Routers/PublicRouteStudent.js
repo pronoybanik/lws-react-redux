@@ -4,7 +4,7 @@ import useAuth from '../Hooks/useAuth';
 
 const PublicRouteStudent = ({ children }) => {
     const isLoggedIn = useAuth();
-    return !isLoggedIn ? children : <Navigate to="/coursePlayer"></Navigate>;
+    return !isLoggedIn ? children : <Navigate to={`/coursePlayer/${1}`}></Navigate>;
 };
 
 export default PublicRouteStudent;

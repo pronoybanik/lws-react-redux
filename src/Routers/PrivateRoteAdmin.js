@@ -4,7 +4,6 @@ import useAuth from '../Hooks/useAuth';
 
 const PrivateRoteAdmin = ({ children }) => {
     const isLoggedIn = useAuth();
-
     return isLoggedIn ? children : <Navigate to="/admin/login"></Navigate>;
 };
 
