@@ -10,15 +10,10 @@ const Model = ({ open, control }) => {
     const [git, setGit] = useState('');
     const [studentAddAssignmentMark, { isSuccess }] = useStudentAddAssignmentMarkMutation();
     const { id } = useParams();
-    // console.log(id);
     const { data: video } = useGetVideosIdQuery(id);
-    // console.log(video);
     const { id: vidoeid, } = video || {};
     const { data: assignents } = useGetAssignmentQuery(vidoeid);
-    // const { data: assignents } = useGetAssignmentIdQuery(vidoeid);
-    // console.log(assignents);
     const { title: assignmentTitle } = assignment || {};
-    // console.log(assignmentTitle);
 
 
     const { user } = useSelector(state => state.auth);

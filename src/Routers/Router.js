@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../LayOut/Main";
 import Login from "../pages/Login/Login";
-import CoursePlayer from "../pages/coursePlayer/CoursePlayer";
 import LeaderBoard from "../pages/leaderBoard/LeaderBoard";
 import Quiz from "../pages/quiz/Quiz";
 import Register from "../pages/register/Register";
@@ -22,6 +21,7 @@ import CoursePlayerVideo from "../components/CoursePlayerVideo/CoursePlayerVideo
 import AddAssignment from "../components/Assignment/AddAssignment";
 import EditAssignment from "../components/Assignment/EditAssignment";
 import AddQuizzes from "../components/Quizzes/AddQuizzes";
+
 
 
 const allRouter = createBrowserRouter([

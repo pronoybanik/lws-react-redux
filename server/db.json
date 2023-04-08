@@ -325,6 +325,17 @@
       "repo_link": "saad@learnwithsumit.com",
       "status": "pending",
       "id": 6
+    },
+    {
+      "student_id": 1,
+      "student_name": "LWS Admin",
+      "title": "Assignment 1 - Implement Debounce Function",
+      "createdAt": "2023-04-08T16:29:57.123Z",
+      "totalMark": 100,
+      "mark": 0,
+      "repo_link": "pronoyffffff@gmail.com",
+      "status": "pending",
+      "id": 7
     }
   ],
   "quizMark": [
