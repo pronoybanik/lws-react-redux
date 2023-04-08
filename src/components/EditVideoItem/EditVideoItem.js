@@ -20,7 +20,7 @@ const EditVideoItem = ({ editVideo: editFromVideo }) => {
                 title,
                 description,
                 url,
-                createdAt,
+                createdAt
             }
         })
         alert('Edit video Successfully')

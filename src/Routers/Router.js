@@ -21,6 +21,7 @@ import EditVideo from "../components/EditVideo/EditVideo";
 import CoursePlayerVideo from "../components/CoursePlayerVideo/CoursePlayerVideo";
 import AddAssignment from "../components/Assignment/AddAssignment";
 import EditAssignment from "../components/Assignment/EditAssignment";
+import AddQuizzes from "../components/Quizzes/AddQuizzes";
 
 
 const allRouter = createBrowserRouter([
@@ -91,6 +92,10 @@ const allRouter = createBrowserRouter([
             {
                 path: '/admin/quizzes',
                 element: <PrivateRoteAdmin><Quizzes></Quizzes></PrivateRoteAdmin>
+            },
+            {
+                path: '/admin/addQuizzes',
+                element: <PrivateRoteAdmin><AddQuizzes></AddQuizzes></PrivateRoteAdmin>
             },
             {
                 path: '/admin/assignmentMark',

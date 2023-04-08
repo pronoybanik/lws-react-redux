@@ -89,6 +89,15 @@
       "duration": "2:00",
       "createdAt": "2023-04-08",
       "id": 3
+    },
+    {
+      "title": "java script ",
+      "description": "it s very imprudent ",
+      "url": "https://youtu.be/BihZd2x8Qh8",
+      "views": "10.00K",
+      "duration": "2:00",
+      "createdAt": "2023-04-08",
+      "id": 4
     }
   ],
   "assignments": [
@@ -209,7 +218,7 @@
       "title": "Assignment 1 - Implement Debounce Function",
       "createdAt": "2021-01-15T15:17:01.727Z",
       "totalMark": 100,
-      "mark": 0,
+      "mark": 100,
       "repo_link": "https://github.com/Learn-with-Sumit/assignment-1",
       "status": "pending"
     },
@@ -236,6 +245,17 @@
       "mark": 50,
       "repo_link": "https://github.com/Learn-with-Sumit/assignment-1",
       "status": "published"
+    },
+    {
+      "student_id": 9,
+      "student_name": "Ali Arman",
+      "title": "Assignment 1 - Implement Debounce Function",
+      "createdAt": "2023-04-07T19:19:10.047Z",
+      "totalMark": 100,
+      "mark": 100,
+      "repo_link": "https://github.com/MdAliArman",
+      "status": "pending",
+      "id": 3
     }
   ],
   "quizMark": [

@@ -41,7 +41,7 @@ const AddAssignment = () => {
             <form onSubmit={handleSubmit} className='inputField'>
                 <div className=''>
                     <div>
-                        <label for="name" >Title</label>
+                        <label for="name" >Assignment Title</label>
                         <input id="name" name="title" type="name" autocomplete="name" required
                             class="login-input rounded-t-md" placeholder="Title"
                         />
@@ -73,7 +73,7 @@ const AddAssignment = () => {
                     <div>
                         <label for="name" >Mark</label>
                         <input id="name" name="mark" type="number" autocomplete="name" required
-                            class="login-input rounded-t-md" placeholder="video link"
+                            class="login-input rounded-t-md" placeholder="Marks"
 
                         />
                     </div>

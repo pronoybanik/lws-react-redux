@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Assignment = () => {
     const { data: allAssignment, isLoading, isError, error } = useGetAssignmentQuery();
+   
     let content = null;
     if (isLoading) {
         content = <Loading></Loading>
@@ -15,7 +16,7 @@ const Assignment = () => {
         content = <Error message={error}></Error>
     }
     if (!isLoading && !isError && allAssignment.length === 0) {
-        content = <Error message={"There are no Video"}></Error>
+        content = <Error message={"There are no Assignment"}></Error>
     }
     if (!isLoading && !isError && allAssignment.length > 0) {
         content = allAssignment.map(assignment => <AssignmentItem key={assignment.id} assignmentDetails={assignment}></AssignmentItem>)

@@ -1,11 +1,20 @@
 import { apiSlice } from "../Api/ApiSlice";
 
-export const AssignmentApi = apiSlice.injectEndpoints({
+export const AssignmentMarkApi = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         assignmentMark: builder.query({
-            query: () => "/assignmentMark "
+            query: () => "/assignmentMark",
+            providesTags: ["AddAssignmentMark"]
+        }),
+        addAssignmentMark: builder.mutation({
+            query: ({ id, data }) => ({
+                url: `/assignmentMark/${id}`,
+                method: "PATCH",
+                body: data
+            }),
+            invalidatesTags: ["AddAssignmentMark"]
         }),
     })
 });
 
-export const { useAssignmentMarkQuery } = AssignmentApi;
+export const { useAssignmentMarkQuery, useAddAssignmentMarkMutation } = AssignmentMarkApi;
