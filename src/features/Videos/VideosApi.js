@@ -5,11 +5,8 @@ const videoApi = apiSlice.injectEndpoints({
         getVideos: builder.query({
             query: (id) => `/videos?id_like=${id}&_limit=1`
         }),
-        // getVideo: builder.query({
-        //     query: () => `/videos?_limit=1`
-        // }),
         getAllVideos: builder.query({
-            query: () => '/videos'
+            query: () => '/videos',
         }),
         getVideosId: builder.query({
             query: (id) => `/videos/${id}`

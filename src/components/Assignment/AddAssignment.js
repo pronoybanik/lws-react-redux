@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAddAssignmentMutation } from '../../features/Assignment/AssignmentApi';
 import { useGetAllVideosQuery } from '../../features/Videos/VideosApi';
 
 const AddAssignment = () => {
     const navigate = useNavigate();
-
-    const [title, setTitle] = useState('');
-    const [mark, setMark] = useState('');
-    const [videoTitle, setVideoTitle] = useState('');
-    const [assignment, setAssignment] = useState('');
-
     const [addAssignment] = useAddAssignmentMutation();
     const { data: allVideos } = useGetAllVideosQuery();
 
@@ -21,7 +15,7 @@ const AddAssignment = () => {
         const videoTitle = e.target.videoTitle.value;
         const assignmentAndId = e.target.addAssignment.value;
 
-        console.log("output", title, mark, videoTitle, assignmentAndId);
+        // console.log("output", title, mark, videoTitle, assignmentAndId);
 
         addAssignment({
             title: title,

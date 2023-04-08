@@ -18,7 +18,7 @@ const StudentResult = () => {
     }
 
     if (!isLoading && !isError && marks?.length === 0) {
-        content = <Error message="No videos found!" />;
+        content = <Error message="No found data!" />;
     }
 
     if (!isLoading && !isError && marks?.length > 0) {

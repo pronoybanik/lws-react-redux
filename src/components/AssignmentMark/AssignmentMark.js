@@ -20,7 +20,7 @@ const AssignmentMark = () => {
         content = <Error message={error}></Error>
     }
     if (!isLoading && !isError && assignmentMarks.length === 0) {
-        content = <Error message={"There are no Video"}></Error>
+        content = <Error message={"There are no assignmentMarks"}></Error>
     }
     if (!isLoading && !isError && assignmentMarks.length > 0) {
         content = assignmentMarks.map(assignment => <AssignmentMarksItem

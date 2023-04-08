@@ -57,7 +57,7 @@ const AddVideo = () => {
                     <br />
                     <div>
                         <label for="name" >Url Link</label>
-                        <input id="name" name="name" type="name" autocomplete="name" required
+                        <input id="name" name="name" type="url" autocomplete="name" required
                             class="login-input rounded-t-md" placeholder="video link "
                             value={url}
                             onChange={(e) => setUrl(e.target.value)}
@@ -67,7 +67,7 @@ const AddVideo = () => {
                     <div>
                         <label for="name" >createdAt</label>
                         <input id="name" name="name" type="date" autocomplete="name" required
-                            class="login-input rounded-t-md bg-white" placeholder="createdAt"
+                            class="login-input rounded-t-md" placeholder="createdAt"
                             value={createdAt}
                             onChange={(e) => setCreatedAt(e.target.value)}
                         />

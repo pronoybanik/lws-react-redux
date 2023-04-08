@@ -13,6 +13,6 @@ export const apiSlice = createApi({
             return headers;
         },
     }),
-    tagTypes: ["AddAssignmentMark"],
+    tagTypes: ["AddAssignmentMark", "QuizzesMarks"],
     endpoints: (builder) => ({})
 })

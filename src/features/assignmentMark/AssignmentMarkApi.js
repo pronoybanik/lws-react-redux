@@ -14,7 +14,17 @@ export const AssignmentMarkApi = apiSlice.injectEndpoints({
             }),
             invalidatesTags: ["AddAssignmentMark"]
         }),
+        getAssignment: builder.query({
+            query: (id) => `/assignments?video_id_like=${id}`
+        }),
+        studentAddAssignmentMark: builder.mutation({
+            query: (data) => ({
+                url: "/assignmentMark",
+                method: "POST",
+                body: data
+            })
+        }),
     })
 });
 
-export const { useAssignmentMarkQuery, useAddAssignmentMarkMutation } = AssignmentMarkApi;
+export const { useAssignmentMarkQuery, useAddAssignmentMarkMutation, useGetAssignmentQuery, useStudentAddAssignmentMarkMutation } = AssignmentMarkApi;

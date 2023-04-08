@@ -82,22 +82,31 @@
       "createdAt": "2023-04-20"
     },
     {
-      "title": "pronoy banik",
-      "description": "Deepcool free",
-      "url": "https://youtu.be/SdGL0qxgZGM",
+      "title": "test",
+      "description": "test 1",
+      "url": "https://www.youtube.com/embed/E9_R88eKcBM",
       "views": "10.00K",
       "duration": "2:00",
-      "createdAt": "2023-04-08",
+      "createdAt": "2023-04-14",
       "id": 3
     },
     {
-      "title": "java script ",
-      "description": "it s very imprudent ",
-      "url": "https://youtu.be/BihZd2x8Qh8",
+      "title": "pronoy ",
+      "description": "Deepcool RF 120 W White LED Case Fan",
+      "url": "https://www.youtube.com/embed/E9_R88eKcBM",
       "views": "10.00K",
       "duration": "2:00",
-      "createdAt": "2023-04-08",
+      "createdAt": "2023-04-20",
       "id": 4
+    },
+    {
+      "title": "Deepcool RF 120 W White LED Case Fan",
+      "description": "what can i do",
+      "url": "https://www.youtube.com/embed/dD9O8DnIBj4",
+      "views": "10.00K",
+      "duration": "2:00",
+      "createdAt": "2023-04-15",
+      "id": 6
     }
   ],
   "assignments": [
@@ -111,12 +120,12 @@
     {
       "id": 2,
       "title": "Assignment 2 - Implement Best Practices",
-      "video_id": 2,
+      "video_id": "2",
       "video_title": "#2 JavaScript Tips and Tricks - JavaScript Job Interview Questions",
-      "totalMark": 100
+      "totalMark": "100"
     },
     {
-      "title": "assignment -3-jjkja",
+      "title": "assignment -3- java",
       "video_id": "3",
       "video_title": "react redux",
       "totalMark": "100",
@@ -207,6 +216,34 @@
           "isCorrect": false
         }
       ]
+    },
+    {
+      "id": 4,
+      "question": "What is the difference between null and undefined in JavaScript?",
+      "video_id": 2,
+      "video_title": "#2 JavaScript Tips and Tricks - JavaScript Job Interview Questions",
+      "options": [
+        {
+          "id": 1,
+          "option": "null represents the intentional absence of any object value.",
+          "isCorrect": true
+        },
+        {
+          "id": 2,
+          "option": "undefined represents the uninitialized value of a variable or property.",
+          "isCorrect": false
+        },
+        {
+          "id": 3,
+          "option": "Same thing",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "option": "No Difference",
+          "isCorrect": false
+        }
+      ]
     }
   ],
   "assignmentMark": [
@@ -220,7 +257,7 @@
       "totalMark": 100,
       "mark": 100,
       "repo_link": "https://github.com/Learn-with-Sumit/assignment-1",
-      "status": "pending"
+      "status": "published"
     },
     {
       "id": 2,
@@ -252,10 +289,42 @@
       "title": "Assignment 1 - Implement Debounce Function",
       "createdAt": "2023-04-07T19:19:10.047Z",
       "totalMark": 100,
-      "mark": 100,
+      "mark": 0,
       "repo_link": "https://github.com/MdAliArman",
       "status": "pending",
       "id": 3
+    },
+    {
+      "student_id": 3,
+      "student_name": "Akash Ahmed",
+      "title": "assignment -3- java",
+      "createdAt": "2023-04-08T12:26:11.229Z",
+      "totalMark": 100,
+      "mark": 0,
+      "repo_link": "saad@learnwithsumit.com",
+      "status": "pending",
+      "id": 4
+    },
+    {
+      "student_id": 3,
+      "student_name": "Akash Ahmed",
+      "title": "assignment -3- java",
+      "createdAt": "2023-04-08T12:26:50.612Z",
+      "totalMark": 100,
+      "mark": 0,
+      "repo_link": "d",
+      "status": "pending",
+      "id": 5
+    },
+    {
+      "student_id": 3,
+      "student_name": "Akash Ahmed",
+      "createdAt": "2023-04-08T12:30:29.237Z",
+      "totalMark": 100,
+      "mark": 0,
+      "repo_link": "saad@learnwithsumit.com",
+      "status": "pending",
+      "id": 6
     }
   ],
   "quizMark": [

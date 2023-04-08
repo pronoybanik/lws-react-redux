@@ -66,14 +66,6 @@ const AdminLogin = () => {
                         </div>
                     </div>
 
-                    <div class="flex items-center justify-end">
-                        <div class="text-sm">
-                            <Link to='/register' class="font-medium text-violet-600 hover:text-violet-500">
-                                Create New Account
-                            </Link>
-                        </div>
-                    </div>
-
                     <div>
                         <button type="submit"
                             class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500">

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Modal from '../Modal/Modal';
+import Model from '../Model/Model';
+import { useGetAssignmentQuery } from '../../features/Assignment/AssignmentApi';
+import { useGetQuizzesQuery } from '../../features/Quizzes/QuizzesApi';
 
 const VideoItem = ({ videoDetails }) => {
 
@@ -9,8 +11,10 @@ const VideoItem = ({ videoDetails }) => {
         setOpened((prevState) => !prevState);
     };
 
-    const { title, createdAt, url, description } = videoDetails || {};
-    
+    const { id, title, createdAt, url, description } = videoDetails || {};
+    const { data: quizzes } = useGetQuizzesQuery(id);
+    const { data: assignments, isLoading, isError, } = useGetAssignmentQuery(id);
+
     return (
         <div class="col-span-full w-full space-y-8 lg:col-span-2">
             <iframe width="100%" class="aspect-video" src={url}
@@ -30,23 +34,22 @@ const VideoItem = ({ videoDetails }) => {
 
 
                 <div class="flex gap-4">
-
-                    <button 
-                    viewBox="0 0 194.436 194.436"
-                        class="w-5 h-5 text-grey-500 cursor-pointer px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary" onClick={controlModal}>
+                    <button
+                        onClick={controlModal}
+                        className={`px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary
+                         ${assignments?.length === 0 && 'hidden'}`}>
                         এসাইনমেন্ট
                     </button>
 
-                    <Link to='/quiz'
-                        class="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary">
-                        কুইজে অংশগ্রহণ করুন
-                    </Link>
+                    <Link to={`/quiz/${id}`}
+                        className={`px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary ${quizzes?.length === 0 && 'hidden'}`}>কুইজে
+                        অংশগ্রহণ
+                        করুন</Link>
                 </div>
                 <p class="mt-4 text-sm text-slate-400 leading-6">
                     {description}
                 </p>
-                {/* <Modal open={opened} control={controlModal} /> */}
-
+                <Model open={opened} control={controlModal} />
             </div>
         </div>
     );

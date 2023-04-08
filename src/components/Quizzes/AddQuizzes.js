@@ -3,8 +3,7 @@ import React from 'react';
 const AddQuizzes = () => {
     return (
         <div>
-         add quizzes
-
+               Add Quizzes
         </div>
     );
 };

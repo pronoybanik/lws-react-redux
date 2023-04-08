@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const VideoListItem = ({ videoListDetails }) => {
-    const { id, title, url, duration, views } = videoListDetails || {};
+    const { id, title, duration, views } = videoListDetails || {};
+    
     return (
         <div class="w-full flex flex-row gap-2 cursor-pointer hover:bg-slate-900 p-2">
             {/* <!-- Thumbnail --> */}
@@ -16,10 +17,10 @@ const VideoListItem = ({ videoListDetails }) => {
             {/* <!-- Description --> */}
             <div clas="flex flex-col w-full">
                 <Link to={`/coursePlayer/${id}`}>
-                    <p class="text-slate-50 text-sm font-medium">Introduction to Couse</p>
+                    <p class="text-slate-50 text-sm font-medium">{title}</p>
                     <div>
                         <span class="text-gray-400 text-xs mt-1">34.5 Mins</span>
-                        <span class="text-gray-400 text-xs mt-1"> | </span>
+                        <span class="text-gray-400 text-xs mt-1"> {duration}</span>
                         <span class="text-gray-400 text-xs mt-1">{views} views</span>
                     </div>
                 </Link>

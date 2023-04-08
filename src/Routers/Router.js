@@ -46,7 +46,7 @@ const allRouter = createBrowserRouter([
                 element: <PrivateRouteStudent><LeaderBoard></LeaderBoard></PrivateRouteStudent>
             },
             {
-                path: '/quiz',
+                path: '/quiz/:id',
                 element: <PrivateRouteStudent><Quiz></Quiz></PrivateRouteStudent>
             },
 

@@ -13,8 +13,6 @@ const EditAssignment = () => {
 
     const navigate = useNavigate();
 
-
-
     const [titles, setTitles] = useState('');
     const [mark, setMark] = useState('');
     const [videoTitle, setVideoTitle] = useState('');
@@ -98,9 +96,7 @@ const EditAssignment = () => {
                             EDIT ASSIGNMENT
                         </button>
                     </div>
-
                 </div>
-
             </form>
         </section >
 

@@ -10,9 +10,10 @@ const AssignmentMarksItem = ({ assignmentDetails }) => {
         addAssignmentMark({
             id,
             data: {
-                mark: Number(addMark)
+                mark: Number(addMark),
+                status: "published"
             }
-        })
+        });
     }
 
     return (
@@ -24,7 +25,7 @@ const AssignmentMarksItem = ({ assignmentDetails }) => {
             {
                 mark === 0 ? <td class="table-td input-mark">
                     <input max="100" onChange={e => setAddMark(e.target.value)} value={addMark} />
-                    <svg onClick={handleSubmit} fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                    <svg onClick={handleSubmit}  fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                         class="w-6 h-6 text-green-500 cursor-pointer hover:text-green-400">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M4.5 12.75l6 6 9-13.5" />
